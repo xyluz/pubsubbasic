@@ -5,6 +5,8 @@ const port = 3000
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
+const event = require('./event');
+
 var corsOptions = {
   origin: "http://localhost:3000"
 };
@@ -59,12 +61,7 @@ app.get('subscriber/listen',(req,res)=>{
 
 })
 
-app.get('/event', (req, res) => {
-  
-  const event = requre('./event');
-  res.json(event.data);
-
-})
+app.get('/event', event.listen);
   
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
