@@ -7,9 +7,15 @@ exports.publish = (topic,content)=>{
   publisher.publish(topic, JSON.stringify(content),  function(){
 
     console.log(`${JSON.stringify(content)} published on ${topic}`);
-    process.exit(0); 
+
+    // process.exit(0); 
     //Maybe close down this after publishing.
         
   });
+
+  return {
+    "topic": topic,
+    "data": content
+  }
 
 }

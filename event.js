@@ -3,7 +3,7 @@ var client = redis.createClient();
 
 
 
-exports.listen = (topic)=>{
+exports.listen = ()=>{
 
   client.PUBSUB('newchannel',(channels,something)=>{
     console.log(`Channels => ${channels}`);
