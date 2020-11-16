@@ -15,3 +15,16 @@ The following endpoints are available
 
 You need a running redis-server to test properly, you an also use redis-cli to test.
 
+
+To test:
+
+Run, npm install.
+
+- Run: npm run dev
+- Open a new terminal, run:
+
+* curl -X POST -d '{"url":"http://localhost:3000/event"}' http://localhost:3000/subscribe/mine
+(PS: mine is the topic you are subscribing to)
+* curl -X POST -H "Content-Type: application/json" -d '{"msg":"hello"}' http://localhost:3000/publish/mine
+(to publish to the topic - mine)
+
